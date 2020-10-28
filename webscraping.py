@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 firstCharacter = list(string.digits + string.ascii_uppercase)
 print(firstCharacter)
 
-""" url = "https://www.thecocktaildb.com/browse.php?b=A"
+url = "https://www.thecocktaildb.com/browse.php?b=A"
 
 page = requests.get(url)
 print(page)
@@ -16,5 +16,4 @@ print(page)
 soup = BeautifulSoup(page.text, "html.parser")
 drinks = soup.findAll("a", {"href": re.compile(r"^/drink/.+")})
 for link in drinks:
-    print(link.get("href")) """
-
+    print(link.get("href"))
