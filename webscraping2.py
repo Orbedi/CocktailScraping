@@ -1,7 +1,3 @@
-# Fuente: https://towardsdatascience.com/web-scraping-using-python-libraries-fe3037152ed1
-
-# CopyRight: https://www.thecocktaildb.com/drink/11368-Flying-Dutchman-Cocktail
-
 import re
 import time
 import string
@@ -17,7 +13,7 @@ alphanumeric_chars = ['A', 'B'] #list(string.digits + string.ascii_uppercase)
 baseurl = "https://www.thecocktaildb.com/browse.php?b="
 links = list()
 dataframe = pd.DataFrame();
-columns =  ["Bebida", "LinkImagen", "Ingrediente1", "Medida1","Ingrediente2", "Medida2", "Ingrediente3", "Medida3", "Ingrediente4", "Medida4", "Ingrediente5", "Medida5", "Ingrediente6", "Medida6"]
+columns =  ["Bebida", "linkImagen", "Ingrediente1", "Medida1","Ingrediente2", "Medida2", "Ingrediente3", "Medida3", "Ingrediente4", "Medida4", "Ingrediente5", "Medida5", "Ingrediente6", "Medida6", "Ingrediente7", "Medida7", "Ingrediente8", "Medida8"]
 
 # Obtenemos las bedidas de cada letra.
 for char in alphanumeric_chars:
@@ -40,7 +36,7 @@ baseurl = "https://www.thecocktaildb.com"
 count = 0
 # Iteramos sobre los links para obtener la información de cada uno de ellos.
 for drinkLink in links:
-    if(count == 10): break
+    # if(count == 10): break
 
     # Se obtiene el html
     url = baseurl + drinkLink
@@ -56,10 +52,15 @@ for drinkLink in links:
     ingredients = soup.findAll("figcaption")
     
     # Se separa el ingrediente de su medida, y se guardan en listas separadas.
-    ingredient = ["","","","","",""]
-    measurement = ["","","","","",""]
+    ingredient = ["","","","","","","",""]
+    measurement = ["","","","","","","",""]
     for index, element in enumerate(ingredients):
-        values = element.text.split("  ")
+        string = element.text.replace("\r\n", "").replace("\n", "").replace("\r", "")
+        values = string.split("  ")
+
+        if index >= 8: break
+
+        # print(index, values)
         if(len(values) == 1):
             ingredient[index] = values[0]
             measurement[index] = ""
@@ -73,8 +74,8 @@ for drinkLink in links:
 
     # Se almacena la nueva bebida en un dataframe de pandas.
     dataframe = dataframe.append(dict(zip(columns,ingredientes_list )), ignore_index = True)
-    
-    count+=1
+
+    # count+=1
     time.sleep(0.1)
 
 # Se exporta el contenido del dataframe a un archivo CSV
