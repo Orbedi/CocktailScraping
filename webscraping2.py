@@ -17,7 +17,7 @@ alphanumeric_chars = ['A', 'B'] #list(string.digits + string.ascii_uppercase)
 baseurl = "https://www.thecocktaildb.com/browse.php?b="
 links = list()
 dataframe = pd.DataFrame();
-columns =  ["Bebida", "Ingrediente1", "Medida1","Ingrediente2", "Medida2", "Ingrediente3", "Medida3", "Ingrediente4", "Medida4", "Ingrediente5", "Medida5", "Ingrediente6", "Medida6"]
+columns =  ["Bebida", "LinkImagen", "Ingrediente1", "Medida1","Ingrediente2", "Medida2", "Ingrediente3", "Medida3", "Ingrediente4", "Medida4", "Ingrediente5", "Medida5", "Ingrediente6", "Medida6"]
 
 # Obtenemos las bedidas de cada letra.
 for char in alphanumeric_chars:
@@ -73,7 +73,7 @@ for drinkLink in links:
 
     # Se almacena la nueva bebida en un dataframe de pandas.
     dataframe = dataframe.append(dict(zip(columns,ingredientes_list )), ignore_index = True)
-
+    
     count+=1
     time.sleep(0.1)
 
