@@ -17,3 +17,9 @@ Para la correcta ejecucion de este codigo, es necesario instalar las siguientes 
 - pip install beautifulsoup4
 - pip install more_itertools 
 
+#### Atributos
+Los atributos obtenidos con Web Scraping son los siguientes:
+- Nombre de la bedida
+- Link de la imagen
+- Ingredientes (De 1 a 8)
+- Medidas de los ingredientes (De 1 a 8)
