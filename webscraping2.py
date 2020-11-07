@@ -39,10 +39,12 @@ for char in alphanumeric_chars:
 
         time.sleep(0.1) # 100 milliseconds
     else:
+        # En caso de error se avisa al usuario.
         print("\nERROR - Status Code: "+ page.status_code +"\n")
         fails_count += 1
+        # El número máximo de errores es 10. El tiempo de espera es incremental.
+        if (fails_count > 10): break
         time.sleep(1 * fails_count)
-    if (fails_count > 10): break
 
 baseurl = "https://www.thecocktaildb.com"
 
@@ -91,10 +93,12 @@ for drinkLink in links:
         # count+=1
         time.sleep(0.1)
     else:
+        # En caso de error se avisa al usuario.
         print("\nERROR - Status Code: "+ page.status_code +"\n")
         fails_count += 1
+        # El número máximo de errores es 10. El tiempo de espera es incremental.
+        if (fails_count > 10): break
         time.sleep(1 * fails_count)
-    if (fails_count > 10): break
 
 # Se exporta el contenido del dataframe a un archivo CSV
 export_csv = dataframe.to_csv(r'.\dataframe_webscraping.csv', index = None, header=True)
