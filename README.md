@@ -23,3 +23,6 @@ Los atributos obtenidos con Web Scraping son los siguientes:
 - Link de la imagen
 - Ingredientes (De 1 a 8)
 - Medidas de los ingredientes (De 1 a 8)
+
+### Código DOI
+<a href="https://doi.org/10.5281/zenodo.4261522"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4261522.svg" alt="DOI"></a>
