@@ -27,8 +27,8 @@ Los atributos de los datos obtenidos con Web Scraping son los siguientes:
 #### Archivos
 - <b>APIScrapping.py</b>: Archivo Python para la obtención de datos utilizando la API.
 - <b>webscraping_HTML.py</b>: Archivo Python para la obtención de datos utilizando Web Scraping.
-- <b>dataframe.csv</b>: Archivo CSV con los datos obtenidos mediante la API.
-- <b>dataframe_webscraping.csv</b>: Archivo CSV con los datos obtenidos mediante Web Scraping.
+- <b>dataframe.csv</b>: Archivo CSV con una muestra de los datos obtenidos mediante la API.
+- <b>dataframe_webscraping.csv</b>: Archivo CSV con una muestra de los datos obtenidos mediante Web Scraping.
 
 #### Código DOI
 <a href="https://doi.org/10.5281/zenodo.4261522"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4261522.svg" alt="DOI"></a>
